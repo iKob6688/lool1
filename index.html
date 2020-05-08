@@ -57,18 +57,7 @@
     }
 
     async function scanCode() {
-      document.getElementById("os").append(liff.getOs())
-      document.getElementById("language").append(liff.getLanguage())
-      document.getElementById("version").append(liff.getVersion())
-      document.getElementById("accessToken").append(liff.getAccessToken())
-      document.getElementById("isInClient").append(liff.isInClient())
-      if (liff.isInClent()) {
-        document.getElementById("btnLogOut").style.display = "none" 
-      } else {
-        document.getElementById("btnMsg").style.display = "none"
-        document.getElementById("btnScanCode").style.display = "none"
-        document.getElementById("btnClose").style.display = "none"
-      }
+      
     }
 
     function openWindow() {
@@ -89,9 +78,22 @@
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("decodeIDToken").append(liff.getDecodeIDToken().email)
     }
 
     function getEnvironment() {
+      document.getElementById("os").append(liff.getOs())
+      document.getElementById("language").append(liff.getLanguage())
+      document.getElementById("version").append(liff.getVersion())
+      document.getElementById("accessToken").append(liff.getAccessToken())
+      document.getElementById("isInClient").append(liff.isInClient())
+      if (liff.isInClent()) {
+        document.getElementById("btnLogOut").style.display = "none" 
+      } else {
+        document.getElementById("btnMsg").style.display = "none"
+        document.getElementById("btnScanCode").style.display = "none"
+        document.getElementById("btnClose").style.display = "none"
+      }
     }
 
     async function main() {
